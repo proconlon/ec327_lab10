@@ -1,30 +1,32 @@
-//include headers and libraries
+// include headers and libraries
+
 #include "Library.h"
-#include <string>
 #include <iostream>
-//implement class functions
 
-using namespace std;
+// implement class functions
 
-Library::Library() //default constructor with no books
+Library::Library()
 {
-    for (int i=0; i<10; i++)
+    for (int i = 0; i < 10; i++)
     {
-        this->books[i]="";
+        books[i] = "";
     }
 }
 
 bool Library::addBook(string bookName)
 {
-    for (int i=0; i<10; i++)
+    for (int i = 0; i < 10; i++)
     {
-        if(this->books[i]==bookName)
+        if (books[i] == bookName)
         {
             return false;
         }
-        else if(this->books[i]=="")
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        if (books[i] == "")
         {
-            this->books[i]=bookName;
+            books[i] = bookName;
             return true;
         }
     }
@@ -33,27 +35,24 @@ bool Library::addBook(string bookName)
 
 bool Library::removeBook(string bookName)
 {
-    for (int i=0; i<10; i++)
+    for (int i = 0; i < 10; i++)
     {
-        if(this->books[i]==bookName)
+        if (books[i] == bookName)
         {
-            books[i]="";
+            books[i] = "";
             return true;
         }
-
     }
     return false;
 }
 
 void Library::print()
 {
-    cout<<"Library contents:"<<endl;
-    for (int i=0; i<10; i++)
-    {  
-        if(this->books[i]!="")
+    for (int i = 0; i < 10; i++)
+    {
+        if (books[i] != "")
         {
-            cout<<this->books[i]<<endl;
+            cout << books[i] << endl;
         }
     }
 }
-
